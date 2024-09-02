@@ -1,0 +1,35 @@
+# Julius Caesar
+Julius Caesar (100–44 BCE) was a Roman general, statesman, and notable historical figure who is well known for his military conquests and pivotal role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire. However, he is also famous for his contributions to the field of cryptography.
+
+# Caesar Cipher
+Description: The Caesar cipher, named after Julius Caesar, is one of the simplest and oldest encryption techniques. It is a type of substitution cipher where each letter in the plaintext is shifted a fixed number of places down the alphabet.
+
+*Example:* With a shift of 3, the letter "A" would be replaced by "D," "B" by "E," and so on. Thus, "HELLO" encrypted with a shift of 3 would become "KHOOR."
+
+# Code
+```py
+alphabets = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","V","W","X","Y","Z"] # Indexing all the alphabets
+shift = 7 # Defining how much shift we want (7, for example)
+word ="SAMPLE WORD" # The text we need to encrypt
+output = ""
+for i in word:
+    if i.upper() in alphabets:
+        n = alphabets.index(i.upper())
+        output += alphabets[(n+shift)%26] # Shifting the alphabet
+    else:
+        output+=i
+print(output)
+```
+# Problems
+**Easy to encrypt**
+
+**Even more easy to guess :/**
+
+**It's just 25 different possibilities!!**
+
+Maybe in BCE it was usefull  ¯\\\_(ツ)\_/¯
+
+In this age, 
+anyone can guess it easily by applying brute force. We definately can do better than this.
+
+(It's still a good start to understand the basics)

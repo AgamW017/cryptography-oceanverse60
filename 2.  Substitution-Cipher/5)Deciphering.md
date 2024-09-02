@@ -1,0 +1,36 @@
+# How to Decrypt?
+The process of decryption is exactly reverse of encryption.
+
+```py
+def ceaser_decrypt(word,shift):
+    alphabets = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","V","W","X","Y","Z"]
+    output = ""
+    for i in word:
+        if i.upper() in alphabets:
+            n = alphabets.index(i.upper())
+            output += alphabets[(n-shift)%26] # Instead of adding the shift we subtract it this time.
+        else:
+            output+=i
+    return output
+
+def substitution_decrypt(string,key):
+    alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    string = list(i for i in string.lower() if i in alphabets)
+    for i in range(0,len(string)):
+        string[i]=alphabets[key.index(string[i])] # Instead of replacing alphabets with key values we replace key vales with corresponding alphabets.
+    string = ''.join(string)
+    return string
+
+def vigenere_decrypt(text,key):
+    alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    text = list(i for i in text.lower() if i in alphabets)
+    for i in range(0,len(text)):
+        text[i]=alphabets[(alphabets.index(text[i])-alphabets.index(key[i%len(key)]))%26] # Instead of adding index of corresponding key, we subtract it.
+    text = ''.join(text)
+    return text
+```
+Too easy, right?
+
+The actual problem comes when you try to break the encrypted text without the key...
+
+So, let's see that!

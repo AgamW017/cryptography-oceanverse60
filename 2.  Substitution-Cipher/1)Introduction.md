@@ -1,0 +1,1 @@
+## A substitution cipher is a method of encryption where each letter in the plaintext is replaced with another letter according to a specific system or rule. The primary goal is to disguise the original message so that only those who know the substitution rule can decipher it. There are several types of substitution ciphers, each with its own characteristics and complexity.
